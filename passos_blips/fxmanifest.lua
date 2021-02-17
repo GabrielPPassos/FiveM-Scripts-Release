@@ -1,4 +1,4 @@
 fx_version 'bodacious'
 game 'gta5'
 
-client_script "server-side/*.lua"
+client_script "client-side/*.lua"
