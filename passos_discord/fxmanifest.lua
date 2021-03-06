@@ -12,6 +12,6 @@ server_scripts {
 }
 
 --[[ 
-	Criado por: 	monke.io
+	Criado por: 	https://github.com/synterrr
 	Editado por:    Passos#2514
 --]]
