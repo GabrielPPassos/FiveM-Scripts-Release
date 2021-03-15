@@ -24,9 +24,10 @@ Citizen.CreateThread(function()
 				if distance <= 1.5 then
 					drawTxt("PRESSIONE  ~b~E~w~  PARA INICIAR A ROTA DE VINHO",4,0.5,0.93,0.50,255,255,255,180)
 					if IsControlJustPressed(0,38) and passos_vinho.checkperm() then
-						passos_vinho.gerarEntrega()
-						selecionado = math.random(9)
-						cblip(entregas,selecionado)
+						if passos_vinho.gerarEntrega() then
+							selecionado = math.random(9)
+							cblip(entregas,selecionado)
+						end
 					end
 				end
 			end
@@ -51,13 +52,14 @@ Citizen.CreateThread(function()
                         if passos_vinho.payment() then
 							RemoveBlip(blips)
 							Wait(2000)
-							passos_vinho.gerarEntrega()
-							before = selecionado
-							selecionado = math.random(9)
-							if selecionado == before then
-								selecionado = selecionado + 1
+							if passos_vinho.gerarEntrega() then
+								before = selecionado
+								selecionado = math.random(9)
+								if selecionado == before then
+									selecionado = selecionado + 1
+								end
+								cblip(entregas,selecionado)
 							end
-							cblip(entregas,selecionado)
 						else
 							TriggerClientEvent("Notify", "negado", "Não encontramos nenhum <b>vinho</b> na sua mochila.")
 						end
