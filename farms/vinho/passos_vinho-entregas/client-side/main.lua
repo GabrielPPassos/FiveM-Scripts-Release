@@ -3,12 +3,7 @@ local Proxy = module("vrp", "lib/Proxy")
 local config = module("passos_vinho-entregas", "config")
 
 vRP = Proxy.getInterface("vRP")
-vRPclient = Tunnel.getInterface("vRP")
 passos_vinho = Tunnel.getInterface("passos_vinho-entregas")
-
-passos = {}
-Proxy.addInterface("passos_vinho-entregas", passos)
-Tunnel.bindInterface("passos_vinho-entregas", passos)
 
 local blips = false
 local entregando = false
@@ -55,7 +50,7 @@ Citizen.CreateThread(function()
                     if IsControlJustPressed(0,38) then
                         if passos_vinho.payment() then
 							RemoveBlip(blips)
-							Wait(5000)
+							Wait(2000)
 							passos_vinho.gerarEntrega()
 							before = selecionado
 							selecionado = math.random(9)
