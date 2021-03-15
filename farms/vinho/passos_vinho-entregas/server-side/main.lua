@@ -38,8 +38,10 @@ function passos.gerarEntrega()
             TriggerClientEvent("atualizar-qtd", source, f)
             TriggerClientEvent("Notify", source, "sucesso", "Você precisa entregar <b>".. f .." vinho(s)</b>, localização macarda no GPS.")
             pedido = f
+            return true
         else
             TriggerClientEvent("Notify", source, "negado", "Você não tem nenhum <b>vinho</b> na mochila.")
+            return false
         end
     end
 end
