@@ -51,6 +51,7 @@ Citizen.CreateThread(function()
                     if IsControlJustPressed(0,38) then
                         if passos_vinho.payment() then
 							RemoveBlip(blips)
+							entregando = false
 							Wait(2000)
 							if passos_vinho.gerarEntrega() then
 								before = selecionado
@@ -60,8 +61,6 @@ Citizen.CreateThread(function()
 								end
 								cblip(entregas,selecionado)
 							end
-						else
-							TriggerClientEvent("Notify", "negado", "Não encontramos nenhum <b>vinho</b> na sua mochila.")
 						end
 			        end
                 end
