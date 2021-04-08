@@ -2,7 +2,7 @@ local passos = {}
 
 passos.usar_perm = false                                  -- Caso esteja "true" o script vai checar se o player tem a permissão de "passos.perm"
 passos.perm = "venda-maconha.permissao"                   -- Caso "passos.usar_perm" esteja em "true" o script vai checar se o player tem essa permissão.
-passos.price = 100                                        -- Dinheiro que o player vai ganhar por unidade (Exempl. Um player entrega 18 vinhos, ele vai receber 1.800 reais)
+passos.price = 100                                        -- Dinheiro que o player vai ganhar por unidade (Exempl. Um player entrega 18 baseados, ele vai receber 1.800 reais)
 passos.item = "maconha_empacotada"                        -- Item da entrega
 passos.item2 = "baseado"                                  -- 2° Item da entrega
 passos.dinheiro_sujo = "dinheiro-sujo"                    -- Item do dinheiro Sujo
